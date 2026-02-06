@@ -76,4 +76,10 @@ print(A | B)
 print(A & B)
 
 print(3 in A)
+
+
+
+
+
+
     

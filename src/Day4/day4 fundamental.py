@@ -44,10 +44,10 @@ for name,amount in purchase.items():
 
 n=int(input("Enter the number of customers:"))
 user_purchases={}
-for name,amount in purchases.items():
+for name,amount in purchase.items():
     print(f"{name} spent ${amount}")
 
-print("total customers:",len(purchases))
+print("total customers:",len(purchase))
 
 
 print("\n")

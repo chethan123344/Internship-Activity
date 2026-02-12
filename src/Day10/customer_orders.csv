@@ -1,0 +1,11 @@
+﻿order_id,customer_name,product,quantity,price,order_data
+1001,chetahn,Laptop ,1,55000,1/5/2026
+1002,yashwith,Mobile ,2,15000,1/6/2026
+1003,chidhesh,Tablet,1,25000,1/7/2026
+,srujan,Headphones ,3,2000,1/8/2026
+1005,rakshith,Monitor ,1,12000,1/9/2026
+1006,jeevan,Keyboard,4,1500,1/10/2026
+1007,shamanth,Mouse ,5,,1/11/2026
+1008,jithesh,Laptop ,2,55000,1/12/2026
+,chidhesh,Mobile ,3,15000,1/6/2026
+1010,yashwith,Tablet  ,1,25000,1/13/2026

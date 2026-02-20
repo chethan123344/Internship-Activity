@@ -1,27 +1,44 @@
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# Import required libraries
+import numpy as np                  
+import pandas as pd                 
+import matplotlib.pyplot as plt     
+import seaborn as sns               
 
-np.random.seed(42)
-original_data = np.random.exponential(scale=2, size=10000)
+# Set seed for reproducibility
+np.random.seed(0)
 
-plt.figure(figsize=(12,4))
-plt.subplot(1,2,1)
-sns.histplot(original_data, kde=True)
-plt.title("Original Data (Right-Skewed)")
+# Step 1: Create a heavily skewed dataset
+# (Using exponential distribution to simulate income)
 
-sample_means = []
-for i in range(1000):
-    sample = np.random.choice(original_data, size=30)
-    sample_means.append(np.mean(sample))
+population = np.random.exponential(scale=50000, size=100000)
 
-sample_means = pd.Series(sample_means)
-plt.subplot(1,2,2)
-sns.histplot(sample_means, kde=True)
-plt.title("Distribution of Sample Means (n=30)")
-plt.tight_layout()
+# Optional: Visualize original skewed data
+plt.figure()
+sns.histplot(population, kde=True)
+plt.title("Original Population Distribution (Right-Skewed)")
+plt.xlabel("Income")
+plt.ylabel("Frequency")
 plt.show()
-print("\nOriginal Data Mean:", np.mean(original_data))
-print("\nMean of Sample Means:", np.mean(sample_means))
-print("\nStandard Deviation of Sample Means:", np.std(sample_means))
+
+# Step 2: Take 1000 samples of size 30 and compute means
+sample_means = []
+
+for i in range(1000):
+    sample = np.random.choice(population, size=30)   
+    sample_mean = np.mean(sample)                    
+    sample_means.append(sample_mean)                 
+
+# Convert to DataFrame
+means_df = pd.DataFrame({"Sample_Means": sample_means})
+
+# Step 3: Plot distribution of sample means
+plt.figure()
+sns.histplot(means_df["Sample_Means"], kde=True)
+plt.title("Distribution of Sample Means (n=30, 1000 samples)")
+plt.xlabel("Sample Mean")
+plt.ylabel("Frequency")
+plt.show()
+
+# Print Mean and Standard Deviation of sample means
+print("Mean of Sample Means:", means_df["Sample_Means"].mean())
+print("Standard Deviation of Sample Means:", means_df["Sample_Means"].std())

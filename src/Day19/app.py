@@ -1,3 +1,7 @@
-print("Hello from MAIN branch")
 
+
+<<<<<<< HEAD
 print("Hello from MAIN updated version")
+=======
+print("Hello from CONFLICT branch")
+>>>>>>> conflict-branch
